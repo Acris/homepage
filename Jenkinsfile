@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'rm -rf $REORZ_HOME/* && cp -a $WORKSPACE/dist/. $REORZ_HOME'
+        sh 'rm -rf $MRX_HOME/* && cp -a $WORKSPACE/dist/. $MRX_HOME'
         echo 'Deploy success!'
       }
     }
