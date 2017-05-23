@@ -26,7 +26,7 @@ pipeline {
     }
   }
   environment {
-    REORZ_HOME = '/usr/share/nginx/html/reorz'
+    MRX_HOME = '/usr/share/nginx/html/mrx'
   }
   triggers {
     pollSCM('H 3 * * *')
