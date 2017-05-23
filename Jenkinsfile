@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  triggers {
-    pollSCM('H 3 * * *')
-  }
   stages {
     stage('Initialize') {
       steps {
@@ -17,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'rm -rf $MRX_HOME/* && cp -a $WORKSPACE/dist/. $MRX_HOME'
+        sh 'rm -rf $REORZ_HOME/* && cp -a $WORKSPACE/dist/. $REORZ_HOME'
         echo 'Deploy success!'
       }
     }
@@ -29,6 +26,9 @@ pipeline {
     }
   }
   environment {
-    MRX_HOME = '/usr/share/nginx/html/mrx'
+    REORZ_HOME = '/usr/share/nginx/html/reorz'
+  }
+  triggers {
+    pollSCM('H 3 * * *')
   }
 }
