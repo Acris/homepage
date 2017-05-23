@@ -1,2 +1,2 @@
-# Re: Orz Homepage
-https://reorz.com/
+# Mr.X Homepage
+https://mrx.one/
