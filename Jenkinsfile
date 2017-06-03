@@ -29,6 +29,6 @@ pipeline {
     MRX_HOME = '/usr/share/nginx/html/mrx'
   }
   triggers {
-    pollSCM('H 3 * * *')
+    pollSCM('*/5 * * * *')
   }
 }
