@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'rm -rf $MRX_HOME/* && cp -a $WORKSPACE/dist/. $MRX_HOME'
+        sh 'rm -rf $MRX_HOME/* && cp -a $WORKSPACE/dist/. $MRX_HOME && cp $WORKSPACE/favicon.ico $MRX_HOME '
         echo 'Deploy success!'
       }
     }
