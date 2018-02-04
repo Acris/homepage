@@ -13,7 +13,7 @@ body {
     left: 0;
     right: 0;
     background-size: cover;
-    background: #f5f8fa url(https://cdn.reorz.com/images/2016/08/background.jpg) none fixed center;
+    background: #f5f8fa url(https://cdn.reorz.com/images/2016/08/background.jpg) no-repeat center;
     opacity: 0.5;
     border-bottom: solid 1px #f0f3f6;
 }
