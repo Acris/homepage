@@ -53,9 +53,9 @@ body {
     position: absolute;
     top: 60%;
     left: 50%;
-    width: 400px;
+    width: 200px;
     height: auto;
-    margin: 0 -200px;
+    margin: 0 -100px;
 }
 
 .container .menu {
