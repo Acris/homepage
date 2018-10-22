@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'rm -rf $ORZ_HOME/* && cp -a $WORKSPACE/dist/. $ORZ_HOME && cp $WORKSPACE/favicon.ico $ORZ_HOME '
+        sh 'rm -rf $ORZ_HOME/* && cp -a $WORKSPACE/dist/. $ORZ_HOME && cp $WORKSPACE/favicon.ico $ORZ_HOME && cp $WORKSPACE/favicon.png $ORZ_HOME'
         echo 'Deploy success!'
       }
     }
