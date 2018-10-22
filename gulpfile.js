@@ -33,4 +33,4 @@ exports.clean = clean
 exports.cssMinify = cssMinify
 exports.htmlMinify = htmlMinify
 
-var build = gulp.series(clean, gulp.parallel(cssMinify, htmlMinify))
+var build = series(clean, parallel(cssMinify, htmlMinify))
