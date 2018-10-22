@@ -1,7 +1,4 @@
-var {
-    series,
-    parallel
-} = require('gulp')
+var gulp = require('gulp')
 var cleanCSS = require('gulp-clean-css')
 var htmlmin = require('gulp-htmlmin')
 
@@ -33,4 +30,4 @@ exports.clean = clean
 exports.cssMinify = cssMinify
 exports.htmlMinify = htmlMinify
 
-var build = series(clean, parallel(cssMinify, htmlMinify))
+var build = gulp.series(clean, gulp.parallel(cssMinify, htmlMinify))
