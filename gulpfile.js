@@ -31,3 +31,5 @@ exports.cssMinify = cssMinify
 exports.htmlMinify = htmlMinify
 
 var build = gulp.series(clean, gulp.parallel(cssMinify, htmlMinify))
+
+gulp.task('default', build)
