@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'yarn add gulp-cli && yarn && yarn run gulp build'
+        sh 'yarn add gulp-cli && yarn && yarn run gulp'
         echo 'Build success!'
       }
     }
