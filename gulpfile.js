@@ -26,6 +26,4 @@ function htmlMinify(cb) {
         .pipe(gulp.dest('./dist'))
 }
 
-var build = gulp.series(clean, gulp.parallel(cssMinify, htmlMinify))
-
-gulp.task(build)
+exports.default = gulp.series(clean, gulp.parallel(cssMinify, htmlMinify))
