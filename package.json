@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.2",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.10.0",
     "gulp-htmlmin": "^4.0.0",
-    "pump": "^2.0.0"
+    "pump": "^2.0.1"
   }
 }

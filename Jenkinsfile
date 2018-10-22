@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'rm -rf $MRX_HOME/* && cp -a $WORKSPACE/dist/. $MRX_HOME && cp $WORKSPACE/favicon.ico $MRX_HOME '
+        sh 'rm -rf $ORZ_HOME/* && cp -a $WORKSPACE/dist/. $ORZ_HOME && cp $WORKSPACE/favicon.ico $ORZ_HOME '
         echo 'Deploy success!'
       }
     }
@@ -26,7 +26,7 @@ pipeline {
     }
   }
   environment {
-    MRX_HOME = '/usr/share/nginx/html/mrx'
+    ORZ_HOME = '/usr/share/nginx/html/orz'
   }
   triggers {
     pollSCM('*/5 * * * *')
