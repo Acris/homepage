@@ -1,35 +1,36 @@
-var gulp = require('gulp');
-var pump = require('pump');
-var cleanCSS = require('gulp-clean-css');
-var htmlmin = require('gulp-htmlmin');
+var {
+    series,
+    parallel
+} = require('gulp')
+var cleanCSS = require('gulp-clean-css')
+var htmlmin = require('gulp-htmlmin')
 
-// 压缩 css 
-gulp.task('minify-css', function (cb) {
-    pump([
-            gulp.src('./css/**/*.css'),
-            cleanCSS({compatibility: 'ie9'}),
-            gulp.dest('./dist/css')
-        ],
-        cb
-    );
-});
-// 压缩 html
-gulp.task('minify-html', function (cb) {
-    pump([
-            gulp.src(['./**/*.html', '!node_modules/**/*.html']),
-            htmlmin({
-                removeComments: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true,
-                collapseWhitespace: true
-            }),
-            gulp.dest('./dist')
-        ],
-        cb
-    );
-});
-// 执行 gulp 命令时执行的任务
-gulp.task('default', [
-    'minify-html', 'minify-css'
-]);
+function clean() {
+    return del(['./dist'])
+}
+
+function cssMinify() {
+    return gulp.src('./css/**/*.css')
+        .pipe(cleanCSS({
+            compatibility: 'ie9'
+        }))
+        .pipe(gulp.dest('./dist/css'))
+}
+
+function htmlMinify(cb) {
+    return gulp.src(['./**/*.html', '!node_modules/**/*.html'])
+        .pipe(htmlmin({
+            removeComments: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest('./dist'))
+}
+
+exports.clean = clean
+exports.cssMinify = cssMinify
+exports.htmlMinify = htmlMinify
+
+var build = gulp.series(clean, gulp.parallel(cssMinify, htmlMinify))
