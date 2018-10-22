@@ -1,2 +1,2 @@
-# Mr.X Homepage
-https://mrx.one/
+# Orz.sh Homepage
+https://orz.sh
