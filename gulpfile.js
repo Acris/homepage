@@ -28,4 +28,4 @@ function htmlMinify(cb) {
 
 var build = gulp.series(clean, gulp.parallel(cssMinify, htmlMinify))
 
-exports.default = build
+gulp.task(build)
