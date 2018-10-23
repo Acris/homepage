@@ -101,6 +101,11 @@ body {
     height: .75em;
 }
 
+.footer a {
+    text-decoration: none;
+    color: #666;
+}
+
 /*! mobile */
 @media screen and (max-width: 600px) {
     .header .description {
