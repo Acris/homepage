@@ -1,7 +1,7 @@
-var gulp = require('gulp')
-var del = require('del')
-var cleanCSS = require('gulp-clean-css')
-var htmlmin = require('gulp-htmlmin')
+const gulp = require('gulp')
+const del = require('del')
+const cleanCSS = require('gulp-clean-css')
+const htmlmin = require('gulp-htmlmin')
 
 function clean() {
     return del(['./dist'])
@@ -15,7 +15,7 @@ function cssMinify() {
         .pipe(gulp.dest('./dist/css'))
 }
 
-function htmlMinify(cb) {
+function htmlMinify() {
     return gulp.src(['./**/*.html', '!node_modules/**/*.html'])
         .pipe(htmlmin({
             removeComments: true,
