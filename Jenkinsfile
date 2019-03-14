@@ -26,7 +26,7 @@ pipeline {
     }
   }
   environment {
-    ORZ_HOME = '/usr/share/nginx/html/orz'
+    ORZ_HOME = '/srv/orz'
   }
   triggers {
     pollSCM('*/5 * * * *')
