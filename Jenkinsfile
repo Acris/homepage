@@ -1,11 +1,10 @@
 pipeline {
-  agent any
-  stages {
-    stage('Initialize') {
-      steps {
-        echo 'Initialize success!'
-      }
+  agent {
+    docker {
+      image 'node:lts-alpine' 
     }
+  }
+  stages {
     stage('Build') {
       steps {
         sh 'yarn add gulp-cli && yarn && yarn run gulp'
